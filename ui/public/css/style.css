@@ -1,0 +1,65 @@
+/*styling for the SAP*/
+#contents
+{
+
+    font-family: sans-serif;
+    
+}
+#contents h3,#contents h4
+{
+    font-weight:normal;
+    
+}
+table.bordered-table th {
+    background: #3caccf;
+    font-weight:bold;
+}
+table.bordered-table th,td
+{
+        border: 1px solid #3caccf; 
+        padding: 4px;
+        text-align: left;
+}
+table.bordered-table 
+    {
+        border-collapse: collapse;
+    }
+
+.addprodstyle div
+
+{
+    width: 50%;
+    float: left;
+}
+.addprodstyle input
+{
+    padding: 10px;
+    margin: 5px;
+    width: 30%;
+    border-color: #3caccf;
+}
+.addprodstyle select 
+{
+    margin: 6px;
+    width: 34%;
+    height: 37px;
+    background-color: #fff;
+    border-radius: 0px;
+    border-color: #3caccf;
+}
+.addprodstyle label
+{
+  display: block;  
+}
+.addprodstyle button
+{
+    float: left;
+    clear: both;
+    padding: 10px;
+    background-color: #3caccf;
+    margin-top: 30px;
+}
+button
+{
+    background-color: #3caccf;
+}
