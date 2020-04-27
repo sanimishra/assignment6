@@ -1,13 +1,13 @@
 /* eslint-disable import/extensions */
 import React from 'react';
-import NumInput from './NumInput.jsx';
-import TextInput from './TextInput.jsx';
-import graphQLFetch from './graphQLFetch.jsx';
 import { LinkContainer } from 'react-router-bootstrap';
 import {
   Col, Panel, Form, FormGroup, FormControl, ControlLabel,
   ButtonToolbar, Button,
 } from 'react-bootstrap';
+import NumInput from './NumInput.jsx';
+import TextInput from './TextInput.jsx';
+import graphQLFetch from './graphQLFetch.jsx';
 import Toast from './Toast.jsx';
 
 
@@ -25,6 +25,11 @@ export default class ProductEdit extends React.Component {
     this.showError = this.showError.bind(this);
     this.dismissToast = this.dismissToast.bind(this);
   }
+
+  componentDidMount() {
+    this.loadData();
+  }
+
   onChange(event, naturalValue) {
     const { name, value: textValue } = event.target;
     const value = naturalValue === undefined ? textValue : naturalValue;
@@ -32,25 +37,23 @@ export default class ProductEdit extends React.Component {
       producteditinfo: { ...prevState.producteditinfo, [name]: value },
     }));
   }
+
   showSuccess(message) {
     this.setState({
       toastVisible: true, toastMessage: message, toastType: 'success',
     });
   }
+
   showError(message) {
     this.setState({
       toastVisible: true, toastMessage: message, toastType: 'danger',
     });
   }
+
   dismissToast() {
     this.setState({ toastVisible: false });
   }
 
-
-  componentDidMount() {
-    this.loadData();
-  }
-  
   async handleSubmit(e) {
     e.preventDefault();
     const { producteditinfo } = this.state;
@@ -65,11 +68,11 @@ export default class ProductEdit extends React.Component {
         id category price name image
       }
     }`;
-  const { id, ...changes } = producteditinfo;
-  const data = await graphQLFetch(query, { id, changes }, this.showError);
-   if(data) {
-    this.setState({ producteditinfo: data.productUpdate }); 
-    this.showSuccess('Updated Product successfully');// eslint-disable-line no-alert
+    const { id, ...changes } = producteditinfo;
+    const data = await graphQLFetch(query, { id, changes }, this.showError);
+    if (data) {
+      this.setState({ producteditinfo: data.productUpdate });
+      this.showSuccess('Updated Product successfully');// eslint-disable-line no-alert
     }
   }
 
@@ -81,7 +84,7 @@ export default class ProductEdit extends React.Component {
     }`;
     const { match: { params: { id } } } = this.props;
     const data = await graphQLFetch(query, { id });
-    this.setState({ producteditinfo:data ? data.products : {} });
+    this.setState({ producteditinfo: data ? data.products : {} });
   }
 
   render() {
@@ -106,57 +109,57 @@ export default class ProductEdit extends React.Component {
         </Panel.Heading>
         <Panel.Body>
           <Form horizontal onSubmit={this.handleSubmit}>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={3}>Catgory:</Col>
-            <Col sm={9}>
-              <FormControl componentClass="select" name="category" value={category} onChange={this.onChange}>
-                <option value="Shirts">Shirts</option>
-                <option value="Jeans">Jeans</option>
-                <option value="Jackets">Jackets</option>
-                <option value="Sweaters">Sweaters</option>
-                <option value="Accessories">Accessories</option>
-              </FormControl>
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={3}>Name:</Col>
-            <Col sm={9}>
-              <FormControl 
+            <FormGroup>
+              <Col componentClass={ControlLabel} sm={3}>Catgory:</Col>
+              <Col sm={9}>
+                <FormControl componentClass="select" name="category" value={category} onChange={this.onChange}>
+                  <option value="Shirts">Shirts</option>
+                  <option value="Jeans">Jeans</option>
+                  <option value="Jackets">Jackets</option>
+                  <option value="Sweaters">Sweaters</option>
+                  <option value="Accessories">Accessories</option>
+                </FormControl>
+              </Col>
+            </FormGroup>
+            <FormGroup>
+              <Col componentClass={ControlLabel} sm={3}>Name:</Col>
+              <Col sm={9}>
+                <FormControl
                   componentClass={TextInput}
                   size={50}
                   name="name"
                   value={name}
                   onChange={this.onChange}
                   key={id}
-              />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={3}>Price:</Col>
-            <Col sm={9}>
-              <FormControl 
-                    componentClass={NumInput}
-                    name="price"
-                    value={price}
-                    onChange={this.onChange}
-                    key={id}
-              />
-            </Col> 
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={3}>Image URl:</Col>   
-            <Col sm={9}>
-              <FormControl 
+                />
+              </Col>
+            </FormGroup>
+            <FormGroup>
+              <Col componentClass={ControlLabel} sm={3}>Price:</Col>
+              <Col sm={9}>
+                <FormControl
+                  componentClass={NumInput}
+                  name="price"
+                  value={price}
+                  onChange={this.onChange}
+                  key={id}
+                />
+              </Col>
+            </FormGroup>
+            <FormGroup>
+              <Col componentClass={ControlLabel} sm={3}>Image URl:</Col>
+              <Col sm={9}>
+                <FormControl
                   componentClass={TextInput}
-                      tag="textarea"
-                      name="image"
-                      value={image}
-                      onChange={this.onChange}
-                      key={id}
-              />
-            </Col> 
-          </FormGroup>
-          <FormGroup>
+                  tag="textarea"
+                  name="image"
+                  value={image}
+                  onChange={this.onChange}
+                  key={id}
+                />
+              </Col>
+            </FormGroup>
+            <FormGroup>
               <Col smOffset={3} sm={6}>
                 <ButtonToolbar>
                   <Button bsStyle="primary" type="submit">Submit</Button>
@@ -165,7 +168,7 @@ export default class ProductEdit extends React.Component {
                   </LinkContainer>
                 </ButtonToolbar>
               </Col>
-          </FormGroup>
+            </FormGroup>
           </Form>
         </Panel.Body>
         <Toast showing={toastVisible} onDismiss={this.dismissToast} bsStyle={toastType}>

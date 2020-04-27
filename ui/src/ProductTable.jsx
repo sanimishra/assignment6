@@ -1,7 +1,9 @@
 import React from 'react';
-import {  withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Button, Glyphicon, Tooltip, OverlayTrigger, Table,} from 'react-bootstrap';
+import {
+  Button, Glyphicon, Tooltip, OverlayTrigger, Table,
+} from 'react-bootstrap';
 
 const deleteTooltip = (
   <Tooltip id="delete-tooltip" placement="top">Delete Product</Tooltip>
@@ -9,9 +11,7 @@ const deleteTooltip = (
 const editTooltip = (
   <Tooltip id="Edit-tooltip" placement="top">Edit Product</Tooltip>
 );
-const viewTooltip = (
-  <Tooltip id="View-tooltip" placement="top">View Product </Tooltip>
-);
+
 const ProductRow = withRouter(({ product, index, deleteProduct }) => (
   <tr>
     <td>{ product.name }</td>
@@ -20,27 +20,28 @@ const ProductRow = withRouter(({ product, index, deleteProduct }) => (
     </td>
     <td>{ product.category }</td>
 
-    <td><LinkContainer to={`/viewimage/${product.id}`} target="_blank">
-        <OverlayTrigger delayShow={1000} overlay={viewTooltip}>
-          <Button bsSize="xsmall">
-            <Glyphicon glyph="picture" />
-          </Button>
-        </OverlayTrigger>
-        </LinkContainer>
+    <td>
+      <Link to={`/viewimage/${product.id}`} target="_blank">
+        <Button bsSize="xsmall">
+          <Glyphicon glyph="picture" />
+          {' '}
+          View image
+        </Button>
+      </Link>
     </td>
     <td>
       <LinkContainer to={`/edit/${product.id}`}>
-      <OverlayTrigger delayShow={1000} overlay={editTooltip}>
+        <OverlayTrigger delayShow={1000} overlay={editTooltip}>
           <Button bsSize="xsmall">
             <Glyphicon glyph="edit" />
           </Button>
         </OverlayTrigger>
       </LinkContainer>
       <OverlayTrigger delayShow={1000} overlay={deleteTooltip}>
-          <Button bsSize="xsmall" onClick={() => { deleteProduct(index); }}>
-            <Glyphicon glyph="trash" />
-          </Button>
-        </OverlayTrigger>
+        <Button bsSize="xsmall" onClick={() => { deleteProduct(index); }}>
+          <Glyphicon glyph="trash" />
+        </Button>
+      </OverlayTrigger>
     </td>
   </tr>
 ));

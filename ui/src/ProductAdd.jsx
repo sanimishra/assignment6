@@ -2,10 +2,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/label-has-for */
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import {
-  ButtonToolbar,Form,FormGroup, FormControl, ControlLabel, InputGroup,Row, Col,
+  Button,
+  ButtonToolbar, Form, FormGroup, FormControl, ControlLabel, Row, Col,
 } from 'react-bootstrap';
+
 
 export default class ProductAdd extends React.Component {
   constructor() {
@@ -38,15 +39,15 @@ export default class ProductAdd extends React.Component {
       <Form name="productAdd" onSubmit={this.handleSubmit} className="addprodstyle">
         <Row>
           <Col sm={3}>
-           <FormGroup>
+            <FormGroup>
               <ControlLabel htmlFor="category">Category</ControlLabel>
               <FormControl componentClass="select" name="category" id="category">
-                  <option value="">Select Catergory</option>
-                  <option value="Shirts">Shirts</option>
-                  <option value="Jeans">Jeans</option>
-                  <option value="Jackets">Jackets</option>
-                  <option value="Sweaters">Sweaters</option>
-                  <option value="Accessories">Accessories</option>
+                <option value="">Select Catergory</option>
+                <option value="Shirts">Shirts</option>
+                <option value="Jeans">Jeans</option>
+                <option value="Jackets">Jackets</option>
+                <option value="Sweaters">Sweaters</option>
+                <option value="Accessories">Accessories</option>
               </FormControl>
             </FormGroup>
           </Col>
@@ -58,7 +59,7 @@ export default class ProductAdd extends React.Component {
           </Col>
         </Row>
         <Row>
-          <Col  sm={3} >
+          <Col sm={3}>
             <FormGroup>
               <ControlLabel htmlFor="price" id="price">Price Per Unit</ControlLabel>
               <FormControl type="text" name="price" id="price" defaultValue={price} />
@@ -72,12 +73,14 @@ export default class ProductAdd extends React.Component {
           </Col>
         </Row>
         <Row>
-          <FormGroup>
-            <ButtonToolbar>
-                <Button bsStyle="primary" type="submit" >Add Product</Button>
-                <Button  type="reset"> Reset </Button>
-            </ButtonToolbar>
-          </FormGroup>
+          <Col sm={3}>
+            <FormGroup>
+              <ButtonToolbar>
+                <Button bsStyle="primary" type="submit">Add Product</Button>
+                <Button type="reset"> Reset </Button>
+              </ButtonToolbar>
+            </FormGroup>
+          </Col>
         </Row>
       </Form>
     );

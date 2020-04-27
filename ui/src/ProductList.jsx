@@ -1,16 +1,18 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable import/extensions */
 import React from 'react';
-import { Label } from 'react-bootstrap';
+import { Label, Panel } from 'react-bootstrap';
 import ProductTable from './ProductTable.jsx';
 import ProductAdd from './ProductAdd.jsx';
 import graphQLFetch from './graphQLFetch.jsx';
 import Toast from './Toast.jsx';
 
+
 export default class ProductList extends React.Component {
   constructor() {
     super();
-    this.state = { products: [] ,
+    this.state = {
+      products: [],
       toastVisible: false,
       toastMessage: ' ',
       toastType: 'info',
@@ -43,9 +45,9 @@ export default class ProductList extends React.Component {
         id
       }
     }`;
-    const data = await graphQLFetch(query,{ product } ,this.showError);
+    const data = await graphQLFetch(query, { product }, this.showError);
     if (data) {
-      this.showSuccess(`Added Product successfully.`);
+      this.showSuccess('Added Product successfully.');
       this.loadData();
     }
   }
@@ -59,20 +61,23 @@ export default class ProductList extends React.Component {
     const data = await graphQLFetch(query, { id });
     const productdeleteinfo = data.productDelete;
     if (productdeleteinfo) {
-      this.showSuccess(`Deleted Product ${id} successfully.`);
+      this.showSuccess(`Deleted Product Id ${id} successfully.`);
       this.loadData();
     }
   }
+
   showSuccess(message) {
     this.setState({
       toastVisible: true, toastMessage: message, toastType: 'success',
     });
   }
+
   showError(message) {
     this.setState({
       toastVisible: true, toastMessage: message, toastType: 'danger',
     });
   }
+
   dismissToast() {
     this.setState({ toastVisible: false });
   }
@@ -81,12 +86,13 @@ export default class ProductList extends React.Component {
     const { toastVisible, toastType, toastMessage } = this.state;
     return (
       <React.Fragment>
-        <h4>Showing all available products</h4>
+        <Label>Showing all available products</Label>
         <hr />
         <ProductTable products={this.state.products} deleteProduct={this.deleteProduct} />
-        <h4>Add a new product to inventory</h4>
-        <hr />
-        <ProductAdd createProduct={this.createProduct} />
+        <Panel>
+          <Panel.Heading>Add a new product to inventory</Panel.Heading>
+          <Panel.Body><ProductAdd createProduct={this.createProduct} /></Panel.Body>
+        </Panel>
         <Toast
           showing={toastVisible}
           onDismiss={this.dismissToast}

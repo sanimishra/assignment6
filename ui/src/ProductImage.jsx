@@ -22,7 +22,7 @@ export default class ProductImage extends React.Component {
     }`;
     const data = await graphQLFetch(query, { id });
     if (data) {
-    this.setState({ productinfo: data.products });
+      this.setState({ productinfo: data.products });
     }
   }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Alert, Collapse } from 'react-bootstrap';
+
 export default class Toast extends React.Component {
   componentDidUpdate() {
     const { showing, onDismiss } = this.props;
@@ -8,9 +9,11 @@ export default class Toast extends React.Component {
       this.dismissTimer = setTimeout(onDismiss, 2000);
     }
   }
+
   componentWillUnmount() {
     clearTimeout(this.dismissTimer);
   }
+
   render() {
     const {
       showing, bsStyle, onDismiss, children,
