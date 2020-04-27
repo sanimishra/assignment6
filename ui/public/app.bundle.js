@@ -210,7 +210,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _store_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./store.js */ "./src/store.js");
-/* harmony import */ var _graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./graphQLFetch.jsx */ "./src/graphQLFetch.jsx");
+/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -286,7 +286,7 @@ function (_React$Component) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return Object(_graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_2__["default"])('query {about}');
+                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_2__["default"])('query {about}');
 
               case 2:
                 data = _context.sent;
@@ -895,7 +895,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
 /* harmony import */ var _NumInput_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./NumInput.jsx */ "./src/NumInput.jsx");
 /* harmony import */ var _TextInput_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TextInput.jsx */ "./src/TextInput.jsx");
-/* harmony import */ var _graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./graphQLFetch.jsx */ "./src/graphQLFetch.jsx");
+/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
 /* harmony import */ var _Toast_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Toast.jsx */ "./src/Toast.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -1054,7 +1054,7 @@ function (_React$Component) {
                 query = "mutation productUpdate(\n      $id: Int!\n      $changes: ProductUpdateInputs!\n    ) {\n      productUpdate(\n        id: $id\n        changes: $changes\n      ) {\n        id category price name image\n      }\n    }";
                 id = producteditinfo.id, changes = _objectWithoutProperties(producteditinfo, ["id"]);
                 _context.next = 6;
-                return Object(_graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_5__["default"])(query, {
+                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_5__["default"])(query, {
                   id: id,
                   changes: changes
                 }, this.showError);
@@ -1097,7 +1097,7 @@ function (_React$Component) {
                 query = "query products($id: Int!) {\n      products(id: $id) {\n        id category name price image\n      }\n    }";
                 id = this.props.match.params.id;
                 _context2.next = 4;
-                return Object(_graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_5__["default"])(query, {
+                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_5__["default"])(query, {
                   id: id
                 });
 
@@ -1239,7 +1239,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProductImage; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./graphQLFetch.jsx */ "./src/graphQLFetch.jsx");
+/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -1333,7 +1333,7 @@ function (_React$Component) {
                 id = this.props.match.params.id;
                 query = "query products($id: Int!) {\n      products(id: $id) {\n        id category name price image\n      }\n    }";
                 _context.next = 4;
-                return Object(_graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_1__["default"])(query, {
+                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_1__["default"])(query, {
                   id: id
                 });
 
@@ -1398,7 +1398,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
 /* harmony import */ var _ProductTable_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProductTable.jsx */ "./src/ProductTable.jsx");
 /* harmony import */ var _ProductAdd_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ProductAdd.jsx */ "./src/ProductAdd.jsx");
-/* harmony import */ var _graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./graphQLFetch.jsx */ "./src/graphQLFetch.jsx");
+/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
 /* harmony import */ var _Toast_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Toast.jsx */ "./src/Toast.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -1507,7 +1507,7 @@ function (_React$Component) {
               case 0:
                 query = "query{\n      productList\n      { \n        id category name price image\n        }\n      }";
                 _context.next = 3;
-                return Object(_graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_4__["default"])(query);
+                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_4__["default"])(query);
 
               case 3:
                 data = _context.sent;
@@ -1542,7 +1542,7 @@ function (_React$Component) {
               case 0:
                 query = "mutation productAdd($product: productinputs!) {\n      productAdd(product: $product) {\n        id\n      }\n    }";
                 _context2.next = 3;
-                return Object(_graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_4__["default"])(query, {
+                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_4__["default"])(query, {
                   product: product
                 }, this.showError);
 
@@ -1583,7 +1583,7 @@ function (_React$Component) {
                 products = this.state.products;
                 id = products[index].id;
                 _context3.next = 5;
-                return Object(_graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_4__["default"])(query, {
+                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_4__["default"])(query, {
                   id: id
                 });
 
@@ -2060,10 +2060,10 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./src/graphQLFetch.jsx":
-/*!******************************!*\
-  !*** ./src/graphQLFetch.jsx ***!
-  \******************************/
+/***/ "./src/graphQLFetch.js":
+/*!*****************************!*\
+  !*** ./src/graphQLFetch.js ***!
+  \*****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

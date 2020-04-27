@@ -7,7 +7,7 @@ import {
 } from 'react-bootstrap';
 import NumInput from './NumInput.jsx';
 import TextInput from './TextInput.jsx';
-import graphQLFetch from './graphQLFetch.jsx';
+import graphQLFetch from './graphQLFetch.js';
 import Toast from './Toast.jsx';
 
 

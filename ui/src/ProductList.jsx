@@ -4,7 +4,7 @@ import React from 'react';
 import { Label, Panel } from 'react-bootstrap';
 import ProductTable from './ProductTable.jsx';
 import ProductAdd from './ProductAdd.jsx';
-import graphQLFetch from './graphQLFetch.jsx';
+import graphQLFetch from './graphQLFetch.js';
 import Toast from './Toast.jsx';
 
 

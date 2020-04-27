@@ -232,13 +232,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _store_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./store.js */ "./src/store.js");
-/* harmony import */ var _graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./graphQLFetch.jsx */ "./src/graphQLFetch.jsx");
+/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
 
 
 
 class About extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   static async fetchData() {
-    const data = await Object(_graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_2__["default"])('query {about}');
+    const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_2__["default"])('query {about}');
     return data;
   }
 
@@ -610,7 +610,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _NumInput_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./NumInput.jsx */ "./src/NumInput.jsx");
 /* harmony import */ var _TextInput_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TextInput.jsx */ "./src/TextInput.jsx");
-/* harmony import */ var _graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./graphQLFetch.jsx */ "./src/graphQLFetch.jsx");
+/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
 /* harmony import */ var _Toast_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Toast.jsx */ "./src/Toast.jsx");
 /* eslint-disable import/extensions */
 
@@ -695,7 +695,7 @@ class ProductEdit extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       id,
       ...changes
     } = producteditinfo;
-    const data = await Object(_graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_5__["default"])(query, {
+    const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_5__["default"])(query, {
       id,
       changes
     }, this.showError);
@@ -721,7 +721,7 @@ class ProductEdit extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
         }
       }
     } = this.props;
-    const data = await Object(_graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_5__["default"])(query, {
+    const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_5__["default"])(query, {
       id
     });
     this.setState({
@@ -855,7 +855,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProductImage; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./graphQLFetch.jsx */ "./src/graphQLFetch.jsx");
+/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
 
 
 class ProductImage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
@@ -883,7 +883,7 @@ class ProductImage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Componen
         id category name price image
       }
     }`;
-    const data = await Object(_graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_1__["default"])(query, {
+    const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_1__["default"])(query, {
       id
     });
 
@@ -930,7 +930,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _ProductTable_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProductTable.jsx */ "./src/ProductTable.jsx");
 /* harmony import */ var _ProductAdd_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ProductAdd.jsx */ "./src/ProductAdd.jsx");
-/* harmony import */ var _graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./graphQLFetch.jsx */ "./src/graphQLFetch.jsx");
+/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
 /* harmony import */ var _Toast_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Toast.jsx */ "./src/Toast.jsx");
 /* eslint-disable react/destructuring-assignment */
 
@@ -968,7 +968,7 @@ class ProductList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
         id category name price image
         }
       }`;
-    const data = await Object(_graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_4__["default"])(query);
+    const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_4__["default"])(query);
     this.setState({
       products: data.productList
     });
@@ -980,7 +980,7 @@ class ProductList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
         id
       }
     }`;
-    const data = await Object(_graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_4__["default"])(query, {
+    const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_4__["default"])(query, {
       product
     }, this.showError);
 
@@ -1000,7 +1000,7 @@ class ProductList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
     const {
       id
     } = products[index];
-    const data = await Object(_graphQLFetch_jsx__WEBPACK_IMPORTED_MODULE_4__["default"])(query, {
+    const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_4__["default"])(query, {
       id
     });
     const productdeleteinfo = data.productDelete;
@@ -1313,10 +1313,10 @@ class Toast extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 /***/ }),
 
-/***/ "./src/graphQLFetch.jsx":
-/*!******************************!*\
-  !*** ./src/graphQLFetch.jsx ***!
-  \******************************/
+/***/ "./src/graphQLFetch.js":
+/*!*****************************!*\
+  !*** ./src/graphQLFetch.js ***!
+  \*****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

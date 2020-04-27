@@ -1,5 +1,5 @@
 import React from 'react';
-import graphQLFetch from './graphQLFetch.jsx';
+import graphQLFetch from './graphQLFetch.js';
 
 export default class ProductImage extends React.Component {
   constructor() {
