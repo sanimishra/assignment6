@@ -28,7 +28,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "apollo-server-express": "^2.10.1",
+    "apollo-server-express": "^2.14.2",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^3.4.1",
     "dotenv": "^6.2.0",
